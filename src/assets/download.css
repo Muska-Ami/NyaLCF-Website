@@ -1,0 +1,41 @@
+.download-box {
+  width: 100vw;
+}
+.download-branch-chip {
+  margin-left: 10px;
+}
+.download-latest-card {
+  width: 90%;
+  margin-top: 40px;
+  left: 50%;
+  transform: translate(-50%);
+}
+.download-latest-card .v-card-subtitle {
+  margin: 15px 15px 0;
+}
+.download-latest-card .download-version-mark {
+  font-size: large;
+  color: #fff !important;
+}
+.download-assets {
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: rgb(40, 40, 40);
+}
+.download-assets .v-list-item {
+    background-color: rgba(255, 144, 207, 0.162);
+    margin-bottom: 3px;
+    margin-top: 2px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.download-assets .span {
+    margin-left: 20px;
+    font-size: smaller;
+    color: gray;
+}
+
+main {
+  margin-top: 64px;
+}
