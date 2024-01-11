@@ -1,8 +1,8 @@
 <template>
-  <v-app-bar color="primary">
-    <v-app-bar-title>
+  <v-app-bar color="#e487bc70" class="rounded-b-lg">
+    <v-app-bar-title color="#ffe2f2" style="font-weight: 700;">
       <router-link to="/" style="text-decoration: none;">
-        Nya LoCyanFrp! 乐青映射启动器
+        Nya LoCyanFrp!
       </router-link>
     </v-app-bar-title>
     <template v-slot:append>
@@ -12,6 +12,7 @@
       <a href="https://github.com/Muska-Ami/NyaLCF" target="_blank">
         <v-btn icon="mdi-github"></v-btn>
       </a>
+
     </template>
   </v-app-bar>
 </template>

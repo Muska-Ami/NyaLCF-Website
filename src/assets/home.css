@@ -2,32 +2,53 @@
   height: 100vh;
   width: 100vw;
   display: flex;
-  align-items: center;
-  background-image: url(https://api.imlazy.ink/img);
-  background-repeat: no-repeat;
-  background-size: cover;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: left;
 }
+
+.home-screen::before {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #00000050;
+}
+
 .home-screen-box {
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.24);
+  margin: 2rem;
+  padding: 1.5rem;
+  background-color: #e487bc70;
+  color: #ffe2f2;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-radius: 10px;
+
+}
+
+.home-screen-box * {
+  font-weight: 600;
+}
+
+.home-screen-box .v-chip {
+  background-color: #94587780;
+  margin: 0.6rem;
+  color: #ffe2f2;
+  height: 2.4rem;
 }
 
 .home-screen h1 {
-  margin: 15px;
+  margin: 0.6rem;
 }
+
 .home-screen .v-btn {
-  margin: 10px;
+  margin: 0.6rem;
+  background-color: #30192670;
+  color: #ffe2f2;
 }
 
-@media screen and (min-width: 600px) {
-  .home-screen-box {
-    margin: 100px;
-  }
-}
-
-main {
-  margin-top: 0;
+.home-screen-box .v-card {
+  margin-block: 0.6rem;
+  background-color: #30192670;
+  color: #ffe2f2;
 }
