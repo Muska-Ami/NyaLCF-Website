@@ -1,5 +1,25 @@
 <script setup>
 import '@/assets/home.css'
+
+import releases from '@/axios/releases'
+import { ref } from 'vue'
+
+var error = ref(false)
+var error_msg = ref('')
+
+var version = ref('')
+
+releases
+  .getLatest()
+  .then((result) => {
+    if (result.status) {
+      version.value = result.tag_name
+    }
+  })
+  .catch((err) => {
+    error.value = true
+    error_msg.value = err.message
+  })
 </script>
 
 <template>
@@ -18,13 +38,13 @@ import '@/assets/home.css'
       <a href="https://github.com/Muska-Ami/NyaLCF" target="_blank">
         <v-btn><v-icon icon="mdi-github"></v-icon>GitHub</v-btn>
       </a>
-      <!-- <v-chip label variant="elevated" v-if="!error">
+      <v-chip label variant="elevated" v-if="!error">
         <v-icon icon="mdi-cloud-check" size="small"></v-icon>
         <span>{{ version }}</span>
       </v-chip>
       <v-chip label variant="elevated" v-else>
         <v-icon icon="mdi-alert" size="small"></v-icon>
-      </v-chip> -->
+      </v-chip>
     </div>
     <!-- <div class="home-screen-box">
       <h2>作者</h2>

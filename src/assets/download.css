@@ -2,7 +2,7 @@
 
 .download {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -12,12 +12,14 @@
   content: '';
   position: absolute;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: #00000050;
+
 }
 
 .download-branch-chip {
   background-color: #ff90cf30;
+  font-weight: 600;
   margin-left: 1rem;
   margin-bottom: 0.3rem;
 }
@@ -65,9 +67,11 @@
   color: gray;
 }
 
-.download-readme-title {
-  display: flex;
-  align-items: center;
+.download-readme {
+  padding: 1.3rem;
+  border-radius: 0.3rem;
+  background-color: #55324670;
+  border-radius: 10px;
 }
 
 .download-assets .download-assets-title {
@@ -75,10 +79,9 @@
 }
 
 .markdown-body {
-  padding: 1rem;
-  background-color: #ffb0e346;
-  border-radius: 10px;
+  background-color: #00000000;
 }
+
 .markdown-body * {
   border-color: #ffe2f2aa !important;
 }
@@ -93,6 +96,13 @@ h4,
 h5,
 h6 {
   color: #ffe2f2 !important;
+}
+
+.fix-height {
+  content: '';
+  clear: both;
+  height: 0;
+  margin-bottom: 3rem;
 }
 
 @media screen and (max-width: 600px) {

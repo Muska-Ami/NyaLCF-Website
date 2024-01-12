@@ -45,12 +45,12 @@ releases
           </v-chip>
         </v-card-subtitle>
         <v-card-text>
-          <h3 class="download-readme-title">
-            <v-icon icon="mdi-file-document-outline"></v-icon>
-            &nbsp;README.md
-            <v-divider style="margin-left: 0.6rem" thickness="5"></v-divider>
-          </h3>
           <div class="download-readme">
+            <h3>
+              <v-icon icon="mdi-file-document-outline"></v-icon>
+              README.md
+            </h3>
+            <v-divider style="margin-block: 0.6rem" thickness="5"></v-divider>
             <vue-showdown class="markdown-body" :markdown="readme"></vue-showdown>
           </div>
           <div class="download-assets">
@@ -60,10 +60,8 @@ releases
             <v-list style="background-color: #00000000">
               <v-list-item v-for="asset in assets" :key="asset" label>
                 <a :href="asset.browser_download_url">{{ asset.name }}</a>
-                <span class="span"
-                  ><v-icon icon="mdi-package"></v-icon>
-                  {{ Math.round(asset.size / 1048576) }} MB</span
-                >
+                <span class="span"><v-icon icon="mdi-package"></v-icon>
+                  {{ Math.round(asset.size / 1048576) }} MB</span>
                 <span class="span"><v-icon icon="mdi-clock"></v-icon> {{ asset.created_at }}</span>
               </v-list-item>
             </v-list>
@@ -75,5 +73,7 @@ releases
         <v-card-subtitle>获取失败</v-card-subtitle>
       </v-card-item>
     </v-card>
+  </div>
+  <div class="fix-height">
   </div>
 </template>
