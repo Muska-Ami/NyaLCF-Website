@@ -1,3 +1,5 @@
+@import url('github-markdown-css/github-markdown.css');
+
 .download {
   width: 100vw;
   height: 100vh;
@@ -32,7 +34,6 @@
   border-radius: 10px;
 }
 
-
 .download-latest-card .v-card-subtitle {
   margin: 1rem 1rem 0;
 }
@@ -62,4 +63,29 @@
   margin-left: 1.3rem;
   font-size: smaller;
   color: gray;
+}
+
+.download-readme-title {
+  display: flex;
+  align-items: center;
+}
+
+.download-assets .download-assets-title {
+  margin: 1rem 1rem 0;
+}
+
+.markdown-body {
+  padding: 1rem;
+  background-color: #ffb0e346;
+  border-radius: 10px;
+}
+.markdown-body * {
+  border-color: #ffe2f2aa !important;
+}
+
+@media screen and (max-width: 600px) {
+  .download-latest-card {
+    margin-inline: 1rem;
+    padding: 0.3rem 0;
+  }
 }

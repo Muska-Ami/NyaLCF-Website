@@ -12,9 +12,11 @@
   },
   "dependencies": {
     "axios": "^1.6.5",
+    "github-markdown-css": "^5.5.0",
     "pinia": "^2.1.7",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5",
+    "vue-showdown": "^4.2.0",
     "vuetify": "^3.4.10"
   },
   "devDependencies": {

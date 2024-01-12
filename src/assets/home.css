@@ -3,7 +3,7 @@
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   justify-content: left;
 }
 
@@ -37,7 +37,7 @@
   height: 2.4rem;
 }
 
-.home-screen h1 {
+.home-screen h1, .home-screen p {
   margin: 0.6rem;
 }
 
