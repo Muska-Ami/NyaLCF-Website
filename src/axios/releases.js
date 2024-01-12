@@ -25,6 +25,7 @@ function getLatest() {
             avatar_url: res.author.avatar_url,
             github_url: res.author.html_url
           },
+          body: res.body,
           assets: res.assets
         })
       })
