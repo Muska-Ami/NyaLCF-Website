@@ -4,7 +4,6 @@ import '@/assets/home.css'
 
 <template>
   <div class="home-screen">
-
     <!-- <div class="home-screen-box" style="margin-top: 7rem;">
       <h2>发行信息</h2>
       <v-divider thickness="10"></v-divider>

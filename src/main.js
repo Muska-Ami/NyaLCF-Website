@@ -3,7 +3,7 @@ import '@mdi/font/css/materialdesignicons.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import { VueShowdownPlugin } from 'vue-showdown';
+import { VueShowdownPlugin } from 'vue-showdown'
 
 import App from '@/App.vue'
 import router from '@/router'
@@ -21,8 +21,8 @@ const theme = {
   dark: true,
   colors: {
     primary: '#e487bc70',
-    secondary: '#30192670',
-  },
+    secondary: '#30192670'
+  }
 }
 
 const vuetify = createVuetify({
@@ -30,17 +30,17 @@ const vuetify = createVuetify({
   directives,
   theme: {
     themes: {
-      theme,
+      theme
     },
-    defaultTheme: 'theme',
+    defaultTheme: 'theme'
   },
   icons: {
     defaultSet: 'mdi',
     aliases,
     sets: {
-      mdi,
-    },
-  },
+      mdi
+    }
+  }
 })
 
 app.use(VueShowdownPlugin, {
@@ -48,9 +48,9 @@ app.use(VueShowdownPlugin, {
   flavor: 'github',
   // 设置 showdown 默认 options （会覆盖上面 flavor 的 options）
   options: {
-    emoji: false,
-  },
-});
+    emoji: false
+  }
+})
 
 app.use(createPinia())
 app.use(router)

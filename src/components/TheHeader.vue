@@ -1,9 +1,7 @@
 <template>
   <v-app-bar color="#e487bc70" class="rounded-b-lg">
-    <v-app-bar-title color="#ffe2f2" style="font-weight: 700;">
-      <router-link to="/" style="text-decoration: none;">
-        Nya LoCyanFrp!
-      </router-link>
+    <v-app-bar-title color="#ffe2f2" style="font-weight: 700">
+      <router-link to="/" style="text-decoration: none"> Nya LoCyanFrp! </router-link>
     </v-app-bar-title>
     <template v-slot:append>
       <router-link to="/download">
@@ -12,7 +10,6 @@
       <a href="https://github.com/Muska-Ami/NyaLCF" target="_blank">
         <v-btn icon="mdi-github"></v-btn>
       </a>
-
     </template>
   </v-app-bar>
 </template>

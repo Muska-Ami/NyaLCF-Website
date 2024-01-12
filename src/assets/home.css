@@ -8,7 +8,7 @@
 }
 
 .home-screen::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -23,7 +23,6 @@
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-radius: 10px;
-
 }
 
 .home-screen-box * {
@@ -37,7 +36,8 @@
   height: 2.4rem;
 }
 
-.home-screen h1, .home-screen p {
+.home-screen h1,
+.home-screen p {
   margin: 0.6rem;
 }
 
@@ -51,4 +51,10 @@
   margin-block: 0.6rem;
   background-color: #30192670;
   color: #ffe2f2;
+}
+
+@media screen and (max-width: 600px) {
+  .home-screen-box {
+    margin-inline: 1rem;
+  }
 }

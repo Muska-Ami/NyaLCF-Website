@@ -51,7 +51,7 @@ releases
             <v-divider style="margin-left: 0.6rem" thickness="5"></v-divider>
           </h3>
           <div class="download-readme">
-            <vue-showdown class="markdown-body" :markdown=readme></vue-showdown>
+            <vue-showdown class="markdown-body" :markdown="readme"></vue-showdown>
           </div>
           <div class="download-assets">
             <h3 class="download-assets-title">
