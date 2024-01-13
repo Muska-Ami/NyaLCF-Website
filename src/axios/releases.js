@@ -5,7 +5,7 @@ const releases = {
 }
 
 const instance = axios.create({
-  baseURL: 'https://api.github.com/repos/Muska-Ami/NyaLCF/releases'
+  baseURL: 'https://api-gh.1l1.icu/repos/Muska-Ami/NyaLCF/releases'
 })
 
 function getLatest() {
