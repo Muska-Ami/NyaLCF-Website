@@ -10,7 +10,7 @@ var error_msg = ref('')
 var version = ref('')
 
 releases
-  .getLatest()
+  .getRelease('latest')
   .then((result) => {
     if (result.status) {
       version.value = result.tag_name

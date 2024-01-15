@@ -4,8 +4,9 @@
   width: 100vw;
   height: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex;
 }
 
 .download::before {
@@ -49,9 +50,8 @@
 .download-assets {
   padding: 0.3rem;
   margin-top: 0.6rem;
-  border-radius: 0.3rem;
-  background-color: #55324670;
   border-radius: 10px;
+  background-color: #55324670;
 }
 
 .download-assets .v-list-item {
@@ -69,21 +69,48 @@
 
 .download-readme {
   padding: 1.3rem;
-  border-radius: 0.3rem;
-  background-color: #55324670;
   border-radius: 10px;
+  background-color: #55324670;
 }
 
 .download-assets .download-assets-title {
   margin: 1rem 1rem 0;
 }
 
+.sourcecode-assets {
+  padding: 0.3rem;
+  margin-top: 0.6rem;
+  border-radius: 10px;
+  background-color: #55324670;
+  height: 4rem
+}
+
+.sourcecode-assets .v-btn {
+  background-color: #30193095;
+  margin-inline: 0.7rem;
+  margin-right: -0.4rem;
+  border-radius: 10px;
+  float: inline-end;
+  margin-top: -0.4rem;
+}
+
+.sourcecode-assets .span {
+  margin-left: 1.3rem;
+  font-size: smaller;
+  color: gray;
+}
+
+.sourcecode-assets .sourcecode-assets-title {
+  margin: 1rem 1rem 0;
+}
+
+
 .markdown-body {
   background-color: #00000000;
 }
 
 .markdown-body * {
-  border-color: #ffe2f2aa !important;
+  border-color: #ffe2f2 !important;
 }
 
 .markdown-body span,
@@ -98,11 +125,32 @@ h6 {
   color: #ffe2f2 !important;
 }
 
+.download-old-card {
+  margin-block: 1rem;
+  margin-inline: 3rem;
+  width: 100vw;
+  padding: 1rem;
+  background-color: #e487bc70;
+  color: #ffe2f2;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+}
+
+.download-old-card .v-select {
+  float: right;
+  width: 16rem;
+  height: 4rem;
+  border-radius: 10px;
+  background-color: #55324670;
+  margin-inline: 1rem;
+
+}
+
 .fix-height {
   content: '';
   clear: both;
   height: 0;
-  margin-bottom: 3rem;
 }
 
 @media screen and (max-width: 600px) {
