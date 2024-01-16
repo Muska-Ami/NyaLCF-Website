@@ -8,25 +8,30 @@ import { ref } from 'vue'
 var loading = ref(true)
 var error = ref(false)
 var error_msg = ref('')
+var show = ref(false)
 
 var version = ref('')
 var branch = ref('')
 var assets = ref([])
+var oldAssets = ref([])
 var readme = ref('')
 var code = ref([])
+var oldCode = ref([])
+
 var selector = ref([])
 var list = ref([])
-var choosen = ref('')
+var chosen = ref('')
 
 
-watch(() => choosen.value,
+watch(() => chosen.value,
   (value) => {
     let id = selector.value.indexOf(value)
     releases
       .getRelease(list.value[id].toString())
       .then((result) => {
         if (result.status) {
-          console.log(result)
+          oldAssets.value = result.assets
+          oldCode.value = result.code
         }
       })
   }
@@ -125,8 +130,34 @@ releases
     <v-card class="download-old-card">
       <v-card-item v-if="!error">
         <v-card-title style="font-weight: 600">旧的发行版本</v-card-title>
-        这一块暂时没写
-        <v-select v-model="choosen" label="版本" :items="selector" rounded="lg"></v-select>
+        <v-card-item>
+          <v-select v-model="chosen" label="版本" :items="selector"></v-select>
+          <v-btn :icon="show ? 'mdi-chevron-up' : 'mdi-chevron-down'" @click="show = !show"
+            class="download-old-card-btn"></v-btn>
+          <div class="download-assets" v-show="show">
+            <h3 class="download-assets-title">
+              <v-icon icon="mdi-package-variant-closed"></v-icon>资源
+            </h3>
+            <v-list style="background-color: #00000000">
+              <v-list-item v-for="asset in oldAssets" :key="asset" :href="asset.browser_download_url"
+                style="color:#ffe2f2">
+                {{ asset.name }}
+                <span class="span"><v-icon icon="mdi-package"></v-icon>
+                  {{ Math.round(asset.size / 1048576) }} MB</span>
+                <span class="span"><v-icon icon="mdi-clock"></v-icon> {{ asset.created_at }}</span>
+              </v-list-item>
+            </v-list>
+          </div>
+          <div class="sourcecode-assets" v-show="show">
+            <h3 class="sourcecode-assets-title">
+              <v-icon icon="mdi-git"></v-icon>源代码
+              <v-btn v-for="ball in oldCode.assets" :href="ball.url">
+                {{ ball.name }}
+              </v-btn>
+            </h3>
+          </div>
+        </v-card-item>
+
       </v-card-item>
       <v-card-item v-else>
         <v-card-title>旧的发行版本</v-card-title>

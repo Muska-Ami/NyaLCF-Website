@@ -138,13 +138,18 @@ h6 {
 }
 
 .download-old-card .v-select {
-  float: right;
+  float: inline-end;
   width: 16rem;
-  height: 4rem;
+  height: 3.4rem;
   border-radius: 10px;
   background-color: #55324670;
-  margin-inline: 1rem;
+}
 
+.download-old-card-btn {
+  background-color: #55324670;
+  border-radius: 10px;
+  height: 3.4rem !important;
+  width: 3.4rem !important;
 }
 
 .fix-height {
