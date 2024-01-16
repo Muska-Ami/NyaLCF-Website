@@ -138,8 +138,8 @@ h6 {
 }
 
 .download-old-card .v-select {
-  float: inline-end;
-  width: 16rem;
+  float: right;
+  width: 12rem;
   height: 3.4rem;
   border-radius: 10px;
   background-color: #55324670;
@@ -150,6 +150,7 @@ h6 {
   border-radius: 10px;
   height: 3.4rem !important;
   width: 3.4rem !important;
+  margin-bottom: 0.3rem;
 }
 
 .fix-height {
@@ -160,6 +161,11 @@ h6 {
 
 @media screen and (max-width: 600px) {
   .download-latest-card {
+    margin-inline: 1rem;
+    padding: 0.3rem 0;
+  }
+
+  .download-old-card {
     margin-inline: 1rem;
     padding: 0.3rem 0;
   }
