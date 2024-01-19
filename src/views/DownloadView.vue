@@ -47,7 +47,9 @@ releases
   .getList()
   .then((result) => {
     if (result.status) {
-      for (let id of result.list) {
+      const full_list = result.list
+      full_list.shift()
+      for (let id of full_list) {
         selector.value.push(id[0])
         list.value.push(id[1])
       }
