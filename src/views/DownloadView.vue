@@ -2,10 +2,11 @@
 import '@/assets/download.css'
 
 import releases from '@/axios/releases'
-import { computed, watch } from 'vue';
+import { watch } from 'vue';
 import { ref } from 'vue'
 
 var loading = ref(true)
+var old_loading = ref(false)
 var error = ref(false)
 var error_msg = ref('')
 var show = ref(false)
@@ -24,9 +25,10 @@ var chosen = ref('')
 
 
 watch(() => chosen.value,
-  (value) => {
+  async (value) => {
+    old_loading.value = true
     let id = selector.value.indexOf(value)
-    releases
+    await releases
       .getRelease(list.value[id].toString())
       .then((result) => {
         if (result.status) {
@@ -34,6 +36,8 @@ watch(() => chosen.value,
           oldCode.value = result.code
         }
       })
+    show.value = true
+    old_loading.value = false
   }
 )
 
@@ -115,7 +119,7 @@ releases
           <div class="sourcecode-assets">
             <h3 class="sourcecode-assets-title">
               <v-icon icon="mdi-git"></v-icon>源代码
-              <v-btn v-for="ball in code.assets" :href="ball.url">
+              <v-btn v-for="ball in code.assets" :key="ball" :href="ball.url">
                 {{ ball.name }}
               </v-btn>
             </h3>
@@ -127,9 +131,10 @@ releases
         <v-card-subtitle>获取失败</v-card-subtitle>
       </v-card-item>
     </v-card>
-    <v-card class="download-old-card">
+    <v-card class="download-old-card" :loading="old_loading">
       <v-card-item v-if="!error">
         <v-card-title style="font-weight: 600">旧的发行版本</v-card-title>
+        <v-card-subtitle>不会获得任何更新，也不会提供任何支持</v-card-subtitle>
         <v-card-item>
           <v-select v-model="chosen" label="版本" :items="selector"></v-select>
           <v-btn :icon="show ? 'mdi-chevron-up' : 'mdi-chevron-down'" @click="show = !show"
@@ -151,7 +156,7 @@ releases
           <div class="sourcecode-assets" v-show="show">
             <h3 class="sourcecode-assets-title">
               <v-icon icon="mdi-git"></v-icon>源代码
-              <v-btn v-for="ball in oldCode.assets" :href="ball.url">
+              <v-btn v-for="ball in oldCode.assets" :key="ball" :href="ball.url">
                 {{ ball.name }}
               </v-btn>
             </h3>
