@@ -55,8 +55,8 @@
 }
 
 .download-assets .v-list-item {
-  background-color: #30193095;
-  margin-block: 0.3rem;
+  background-color: hsla(300, 32%, 14%, 0.584);
+  margin-bottom: 0.3rem;
   margin-inline: 0.6rem;
   border-radius: 10px;
 }
@@ -157,6 +157,10 @@ h6 {
   content: '';
   clear: both;
   height: 0;
+}
+
+.mirror-switch {
+  margin-left: 1.2rem;
 }
 
 @media screen and (max-width: 600px) {
