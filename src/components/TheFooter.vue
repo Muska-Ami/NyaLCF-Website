@@ -12,6 +12,7 @@
       <router-link to="/credits">
         <img src="https://contrib.rocks/image?repo=Muska-Ami/NyaLCF" height="32px" />
       </router-link>
+      <br>
       <router-link to="/credits">
         <v-btn><v-icon icon="mdi-credit-card-chip"></v-icon>更多</v-btn>
       </router-link>
