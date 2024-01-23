@@ -29,7 +29,6 @@ a:hover {
 }
 .v-footer {
   flex-flow: column;
-  justify-content: flex-start;
 }
 .footer-box {
   margin: 1rem;
@@ -40,6 +39,9 @@ a:hover {
   border-radius: 1rem;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+}
+.v-card {
+  height: -5rem;
 }
 
 * {
