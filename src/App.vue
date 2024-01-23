@@ -1,6 +1,7 @@
 <script setup>
 import { RouterView } from 'vue-router'
 import TheHeader from '@/components/TheHeader.vue'
+import TheFooter from './components/TheFooter.vue';
 </script>
 
 <template>
@@ -9,6 +10,7 @@ import TheHeader from '@/components/TheHeader.vue'
       <TheHeader></TheHeader>
       <main>
         <RouterView />
+        <TheFooter></TheFooter>
       </main>
     </v-layout>
   </v-skeleton-loader>

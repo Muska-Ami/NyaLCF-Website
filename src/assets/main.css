@@ -27,6 +27,20 @@ a {
 a:hover {
   color: pink;
 }
+.v-footer {
+  flex-flow: column;
+  justify-content: flex-start;
+}
+.footer-box {
+  margin: 1rem;
+  background-color: #3f3f3f70;
+  padding: 0.75rem 2rem;
+  color: #ffe2f2;
+  min-width: 20rem;
+  border-radius: 1rem;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
 
 * {
   transition: 0.3s;

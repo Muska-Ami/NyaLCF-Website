@@ -12,6 +12,11 @@ const router = createRouter({
       path: '/download',
       name: 'download',
       component: () => import('@/views/DownloadView.vue')
+    },
+    {
+      path: '/credits',
+      name: 'credits',
+      component: () => import('@/views/CreditsView.vue')
     }
   ]
 })
