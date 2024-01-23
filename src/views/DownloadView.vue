@@ -161,7 +161,7 @@ releases
             </h3>
             <v-list style="background-color: #00000000">
               <v-list-item v-for="asset in oldAssets" :key="asset" style="color:#ffe2f2">
-                <a v-if="mirror" :href="mirror_url + asset.browser_download_url">
+                <a v-if="mirror_old" :href="mirror_url + asset.browser_download_url">
                   {{ asset.name }}
                   <span class="span"><v-icon icon="mdi-package"></v-icon>
                     {{ Math.round(asset.size / 1048576) }} MB</span>
