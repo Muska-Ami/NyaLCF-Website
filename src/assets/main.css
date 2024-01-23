@@ -12,8 +12,22 @@ h6 {
 }
 
 main {
+  min-height: 100vh;
   background-image: url(https://api.imlazy.ink/img);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+a {
+  color: rgb(255, 146, 164);
+  text-decoration: none;
+  transition: 0.5s;
+}
+a:hover {
+  color: pink;
+}
+
+* {
+  transition: 0.3s;
 }
