@@ -31,3 +31,11 @@
 .v-card .v-card-subtitle {
   margin: 1rem 1rem 0;
 }
+
+
+@media screen and (max-width: 600px) {
+    .v-card {
+      margin-inline: 1rem;
+      padding: 0.3rem 0;
+    }
+  }
