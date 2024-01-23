@@ -81,7 +81,7 @@
   margin-top: 0.6rem;
   border-radius: 10px;
   background-color: #55324670;
-  height: 4rem
+  height: 4rem;
 }
 
 .sourcecode-assets .v-btn {
@@ -102,7 +102,6 @@
 .sourcecode-assets .sourcecode-assets-title {
   margin: 1rem 1rem 0;
 }
-
 
 .markdown-body {
   background-color: #00000000;

@@ -9,7 +9,7 @@ import '@/assets/credits.css'
       <v-card-subtitle>
         <a href="https://github.com/Muska-Ami/NyaLCF/contributors" target="_blank">
           <img src="https://contrib.rocks/image?repo=Muska-Ami/NyaLCF" height="32px" />
-          <br>https://github.com/Muska-Ami/NyaLCF/contributors
+          <br />https://github.com/Muska-Ami/NyaLCF/contributors
         </a>
       </v-card-subtitle>
       <v-card-text>
@@ -17,7 +17,11 @@ import '@/assets/credits.css'
       </v-card-text>
       <v-card-title>仓库统计</v-card-title>
       <v-card-text>
-        <img src="https://repobeats.axiom.co/api/embed/8657905cfb65146e66a5d6039165f705d6403531.svg" alt="Repobeats analytics image" width="100%">
+        <img
+          src="https://repobeats.axiom.co/api/embed/8657905cfb65146e66a5d6039165f705d6403531.svg"
+          alt="Repobeats analytics image"
+          width="100%"
+        />
       </v-card-text>
     </v-card>
     <v-card>

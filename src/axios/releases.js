@@ -99,11 +99,11 @@ function getRelease(id) {
           code: {
             assets: {
               0: {
-                name: "tar",
+                name: 'tar',
                 url: res.tarball_url
               },
               1: {
-                name: "zip",
+                name: 'zip',
                 url: res.zipball_url
               }
             },

@@ -2,10 +2,10 @@
 import '@/assets/download.css'
 
 import releases from '@/axios/releases'
-import { watch } from 'vue';
+import { watch } from 'vue'
 import { ref } from 'vue'
 
-var mirror_url = "https://proxy-gh.1l1.icu/"
+var mirror_url = 'https://proxy-gh.1l1.icu/'
 var mirror = ref(true)
 var mirror_old = ref(true)
 
@@ -27,25 +27,21 @@ var selector = ref([])
 var list = ref([])
 var chosen = ref('')
 
-
-watch(() => chosen.value,
+watch(
+  () => chosen.value,
   async (value) => {
     old_loading.value = true
     let id = selector.value.indexOf(value)
-    await releases
-      .getRelease(list.value[id].toString())
-      .then((result) => {
-        if (result.status) {
-          oldAssets.value = result.assets
-          oldCode.value = result.code
-        }
-      })
+    await releases.getRelease(list.value[id].toString()).then((result) => {
+      if (result.status) {
+        oldAssets.value = result.assets
+        oldCode.value = result.code
+      }
+    })
     show.value = true
     old_loading.value = false
   }
 )
-
-
 
 releases
   .getList()
@@ -64,7 +60,6 @@ releases
     error_msg.value = err.message
     loading.value = false
   })
-
 
 releases
   .getRelease('latest')
@@ -86,13 +81,16 @@ releases
   })
 </script>
 
-
-
 <template>
   <div class="download">
     <v-card class="download-latest-card" :loading="loading">
       <v-card-item v-if="!error">
-        <v-switch color="primary" class="mirror-switch" v-model="mirror" label="使用镜像源"></v-switch>
+        <v-switch
+          color="primary"
+          class="mirror-switch"
+          v-model="mirror"
+          label="使用镜像源"
+        ></v-switch>
         <v-card-title style="font-weight: 600">最新发行版本</v-card-title>
         <v-card-subtitle>
           <span class="download-version-mark">{{ version }}</span>
@@ -115,18 +113,26 @@ releases
               <v-icon icon="mdi-package-variant-closed"></v-icon>资源
             </h3>
             <v-list style="background-color: #00000000">
-              <v-list-item v-for="asset in assets" :key="asset" style="color:#ffe2f2">
+              <v-list-item v-for="asset in assets" :key="asset" style="color: #ffe2f2">
                 <a v-if="mirror" :href="mirror_url + asset.browser_download_url">
                   {{ asset.name }}
-                  <span class="span"><v-icon icon="mdi-package"></v-icon>
-                    {{ Math.round(asset.size / 1048576) }} MB</span>
-                  <span class="span"><v-icon icon="mdi-clock"></v-icon> {{ asset.created_at }}</span>
+                  <span class="span"
+                    ><v-icon icon="mdi-package"></v-icon>
+                    {{ Math.round(asset.size / 1048576) }} MB</span
+                  >
+                  <span class="span"
+                    ><v-icon icon="mdi-clock"></v-icon> {{ asset.created_at }}</span
+                  >
                 </a>
                 <a v-else :href="asset.browser_download_url">
                   {{ asset.name }}
-                  <span class="span"><v-icon icon="mdi-package"></v-icon>
-                    {{ Math.round(asset.size / 1048576) }} MB</span>
-                  <span class="span"><v-icon icon="mdi-clock"></v-icon> {{ asset.created_at }}</span>
+                  <span class="span"
+                    ><v-icon icon="mdi-package"></v-icon>
+                    {{ Math.round(asset.size / 1048576) }} MB</span
+                  >
+                  <span class="span"
+                    ><v-icon icon="mdi-clock"></v-icon> {{ asset.created_at }}</span
+                  >
                 </a>
               </v-list-item>
             </v-list>
@@ -148,30 +154,46 @@ releases
     </v-card>
     <v-card class="download-old-card" :loading="old_loading">
       <v-card-item v-if="!error">
-        <v-switch color="primary" class="mirror-switch" v-model="mirror_old" label="使用镜像源"></v-switch>
+        <v-switch
+          color="primary"
+          class="mirror-switch"
+          v-model="mirror_old"
+          label="使用镜像源"
+        ></v-switch>
         <v-card-title style="font-weight: 600">旧的发行版本</v-card-title>
         <v-card-subtitle>不会获得任何更新，也不会提供任何支持</v-card-subtitle>
         <v-card-item>
           <v-select v-model="chosen" label="版本" :items="selector"></v-select>
-          <v-btn :icon="show ? 'mdi-chevron-up' : 'mdi-chevron-down'" @click="show = !show"
-            class="download-old-card-btn"></v-btn>
+          <v-btn
+            :icon="show ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+            @click="show = !show"
+            class="download-old-card-btn"
+          ></v-btn>
           <div class="download-assets" v-show="show">
             <h3 class="download-assets-title">
               <v-icon icon="mdi-package-variant-closed"></v-icon>资源
             </h3>
             <v-list style="background-color: #00000000">
-              <v-list-item v-for="asset in oldAssets" :key="asset" style="color:#ffe2f2">
+              <v-list-item v-for="asset in oldAssets" :key="asset" style="color: #ffe2f2">
                 <a v-if="mirror_old" :href="mirror_url + asset.browser_download_url">
                   {{ asset.name }}
-                  <span class="span"><v-icon icon="mdi-package"></v-icon>
-                    {{ Math.round(asset.size / 1048576) }} MB</span>
-                  <span class="span"><v-icon icon="mdi-clock"></v-icon> {{ asset.created_at }}</span>
+                  <span class="span"
+                    ><v-icon icon="mdi-package"></v-icon>
+                    {{ Math.round(asset.size / 1048576) }} MB</span
+                  >
+                  <span class="span"
+                    ><v-icon icon="mdi-clock"></v-icon> {{ asset.created_at }}</span
+                  >
                 </a>
                 <a v-else :href="asset.browser_download_url">
                   {{ asset.name }}
-                  <span class="span"><v-icon icon="mdi-package"></v-icon>
-                    {{ Math.round(asset.size / 1048576) }} MB</span>
-                  <span class="span"><v-icon icon="mdi-clock"></v-icon> {{ asset.created_at }}</span>
+                  <span class="span"
+                    ><v-icon icon="mdi-package"></v-icon>
+                    {{ Math.round(asset.size / 1048576) }} MB</span
+                  >
+                  <span class="span"
+                    ><v-icon icon="mdi-clock"></v-icon> {{ asset.created_at }}</span
+                  >
                 </a>
               </v-list-item>
             </v-list>
@@ -185,7 +207,6 @@ releases
             </h3>
           </div>
         </v-card-item>
-
       </v-card-item>
       <v-card-item v-else>
         <v-card-title>旧的发行版本</v-card-title>
@@ -193,6 +214,5 @@ releases
       </v-card-item>
     </v-card>
   </div>
-  <div class="fix-height">
-  </div>
+  <div class="fix-height"></div>
 </template>
