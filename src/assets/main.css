@@ -47,3 +47,7 @@ a:hover {
 * {
   transition: 0.3s;
 }
+
+.markdown-body {
+  color: #e6edf3 !important;
+}
