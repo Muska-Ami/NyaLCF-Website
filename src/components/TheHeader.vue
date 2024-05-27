@@ -7,6 +7,9 @@
       <router-link to="/download">
         <v-btn icon="mdi-download"></v-btn>
       </router-link>
+      <a href="https://docs-nyalcf.1l1.icu" target="_blank">
+        <v-btn icon="mdi-book"></v-btn>
+      </a>
       <a href="https://github.com/Muska-Ami/NyaLCF" target="_blank">
         <v-btn icon="mdi-github"></v-btn>
       </a>
