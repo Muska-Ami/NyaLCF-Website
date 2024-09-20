@@ -28,9 +28,9 @@ a:hover {
   color: pink;
 }
 .v-footer {
-  flex-flow: column;
+  display: block;
 }
-.footer-box {
+/* .footer-box {
   margin: 1rem;
   background-color: #3f3f3f70;
   padding: 0.75rem 2rem;
@@ -39,7 +39,7 @@ a:hover {
   border-radius: 1rem;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-}
+} */
 .v-card {
   height: -5rem;
 }
